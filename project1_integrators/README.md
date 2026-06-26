@@ -99,9 +99,11 @@ add bookkeeping overhead with no benefit when `dt` is externally constrained.
 
 ## Figures & Trend Rationale
 
-### `exp_decay.png` — Exponential Decay Trajectories
+### `trajectories.png` — Exponential Decay & Harmonic Oscillator Trajectories
 
-All three methods fall from 1.0 toward 0, but:
+![Trajectories: Exponential Decay and Harmonic Oscillator](trajectories.png)
+
+**Exponential Decay** — All three methods fall from 1.0 toward 0, but:
 
 - **Euler** trails slightly above the exact curve because the start-of-interval derivative is
   larger in magnitude than the average over the interval, so each step overshoots.
@@ -110,7 +112,7 @@ All three methods fall from 1.0 toward 0, but:
 
 The error is largest near `t=0` where curvature of `e^{−λt}` is highest.
 
-### `harmonic.png` — Harmonic Oscillator (Energy Test)
+### Harmonic Oscillator (Energy Test)
 
 This figure exposes Euler's fatal flaw:
 
@@ -123,6 +125,8 @@ This figure exposes Euler's fatal flaw:
   long-horizon simulation and real-time MPC prediction models.
 
 ### `convergence.png` — Log-Log Error vs. Step Size
+
+![Convergence Analysis: Log-Log Error vs Step Size](convergence.png)
 
 Three straight lines with different slopes confirm theory:
 
