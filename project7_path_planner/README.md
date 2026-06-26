@@ -121,6 +121,8 @@ speed to `sqrt(3.5/0.40) = 2.96 m/s` at the tightest corner.
 
 ### `map_path.png` — Occupancy Grid + A\* + Spline
 
+![Occupancy Grid + A* + Spline](map_path.png)
+
 The figure shows the 60 m × 60 m map with:
 
 - **Grey rectangles**: the four building obstacles (8–22 m and 35–50 m ranges in x and y).
@@ -139,6 +141,8 @@ diagonal moves, which are shorter than two cardinal moves covering the same disp
 A\* uses these wherever the path is not constrained by an obstacle.
 
 ### `curvature.png` — Path Curvature vs. Arc-Length
+
+![Path Curvature vs. Arc-Length](curvature.png)
 
 The curvature profile shows three distinct regions:
 

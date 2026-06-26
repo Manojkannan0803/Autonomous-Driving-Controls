@@ -142,6 +142,8 @@ true uncertainty). ANEES << 2 means the filter is underconfident (Q is too large
 
 ### `trajectory.png` — True vs. KF vs. EKF Paths
 
+![True vs. KF vs. EKF Paths](trajectory.png)
+
 Three paths overlaid on the figure-eight:
 
 - **True path** (ground truth bicycle model): a smooth figure-eight.
@@ -161,6 +163,8 @@ lateral direction.  The EKF recovers within 0.5 s; the KF recovers within 1–2 
 
 ### `errors.png` — Position Error Over Time
 
+![Position Error Over Time](errors.png)
+
 - **KF error** shows a regular periodic pattern — errors peak at the apex of every
   figure-eight loop (maximum curvature) and decay on the straights (where the CV model
   is accurate). This periodicity is a direct signature of model mismatch.
@@ -170,7 +174,9 @@ lateral direction.  The EKF recovers within 0.5 s; the KF recovers within 1–2 
 - RMSE gap between KF and EKF demonstrates the value of the nonlinear CTRV model and
   IMU fusion: **the EKF achieves ~30–40 % lower position RMSE** on the figure-eight.
 
-### `innovations.png` — EKF Innovation Sequence
+### `innovation.png` — EKF Innovation Sequence
+
+![EKF Innovation Sequence](innovation.png)
 
 The innovation `y_k = z_k − H·x̂_k` should be zero-mean white Gaussian noise if the
 filter is correctly calibrated:

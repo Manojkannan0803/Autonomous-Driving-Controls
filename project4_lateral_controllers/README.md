@@ -112,7 +112,9 @@ but 10× slower than the offline approach.
 
 ## Figures & Trend Rationale
 
-### `trajectories.png` — Path Tracking on Figure-Eight
+### Path Tracking on Figure-Eight
+
+![Path Tracking on Figure-Eight](xy_comparison.png)
 
 All three controllers trace the figure-eight, but with different lateral deviation patterns:
 
@@ -131,6 +133,8 @@ All three controllers trace the figure-eight, but with different lateral deviati
   without curvature feedforward (added in P6), it can accumulate phase lag on tight curves.
 
 ### `cte_comparison.png` — Cross-Track Error Over Time
+
+![Cross-Track Error Over Time](cte_comparison.png)
 
 The CTE time series shows that:
 

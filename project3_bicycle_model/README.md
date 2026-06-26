@@ -108,7 +108,13 @@ A\* planner directly into a `ReferencePath` without needing a parametric formula
 
 ## Figures & Trend Rationale
 
-### `trajectories.png` — Three Scenarios
+### Three Scenarios
+
+![Circle Validation](circle_validation.png)
+
+![S-Curve Open Loop](s_curve_openloop.png)
+
+![Figure Eight](figure_eight.png)
 
 **Straight line**: The vehicle accelerates from rest to cruise speed then holds it.
 The path is exactly straight (θ = const), confirming that `δ = 0` produces no lateral

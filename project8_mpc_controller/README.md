@@ -136,6 +136,8 @@ N = 15 steps is a short lookahead.
 
 ### `fig8_comparison.png` — Figure-Eight: MPC vs LQR
 
+![Figure-Eight: MPC vs LQR](fig8_comparison.png)
+
 **Scenario A** (unconstrained — both controllers have actuator headroom):
 
 - Both paths overlap almost perfectly — the figure-eight is kinematically feasible for a
@@ -147,6 +149,8 @@ N = 15 steps is a short lookahead.
   linearisation errors that the fixed LQR gain cannot correct.
 
 ### `urban_comparison.png` — Urban Path: MPC vs LQR
+
+![Urban Path: MPC vs LQR](urban_comparison.png)
 
 **Scenario B** (constraint-active — tight building corner):
 
@@ -170,6 +174,8 @@ ramps up to 30° starting ~0.3 s before the apex, whereas LQR's steering hits th
 reactively at the apex.
 
 ### `summary.png` — Latency & Statistics
+
+![Latency & Statistics](summary.png)
 
 Component latency bar chart confirms real-time feasibility:
 - A\* + Spline planning: 0.53 ms (one-time cost at route start)

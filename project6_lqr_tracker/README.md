@@ -120,7 +120,9 @@ phase lag that makes P4-style controllers drift outward on curves.
 
 ## Figures & Trend Rationale
 
-### `trajectories.png` — P6 vs P4 Path Tracking
+### P6 vs P4 Path Tracking
+
+![P6 vs P4 Path Tracking](trajectory.png)
 
 Both vehicles start at the same point on the figure-eight and are driven for 60 s (≈ 3 laps).
 
@@ -137,7 +139,9 @@ Both vehicles start at the same point on the figure-eight and are driven for 60 
 The divergence is most visible on the 5th and 6th lap — P4's accumulated phase lag has
 moved it ~1.5 m off the inner loop apex, whereas P6 remains < 0.2 m.
 
-### `cte_comparison.png` — CTE Over 60 s
+### CTE Over 60 s
+
+![CTE Over 60 s](tracking.png)
 
 - **P6 CTE** is bounded and stationary — RMS ≈ 0.15 m, with periodic spikes < 0.4 m
   at the figure-eight crossover (rapid heading change, unavoidable transient).
@@ -146,7 +150,9 @@ moved it ~1.5 m off the inner loop apex, whereas P6 remains < 0.2 m.
   The trend is not linear — it plateaus after 3–4 laps when the error becomes large enough
   that feedback dominates and the controller stabilises at a new (incorrect) equilibrium.
 
-### `speed_profile.png` — Reference vs. Actual Speed
+### `gains.png` — Reference vs. Actual Speed
+
+![LQR Gains & Speed Profile](gains.png)
 
 - **P6**: actual speed tracks the κ-limited profile closely.  The speed error `e_speed`
   is driven toward zero by the LQR speed feedback term `−K_i[1,2] · e_speed`.

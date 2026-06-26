@@ -105,6 +105,8 @@ Key design decisions:
 
 ### `pid_comparison.png` — Step Response: P vs PI vs PID
 
+![Step Response: P vs PI vs PID](pid_comparison.png)
+
 This figure shows four controllers responding to a 0 → 10 m/s step:
 
 - **P only**: Rises quickly but settles ~15 % below the setpoint. The steady-state error is
@@ -129,6 +131,8 @@ This figure shows four controllers responding to a 0 → 10 m/s step:
 
 ### `speed_change.png` — Setpoint Profile Tracking
 
+![Setpoint Profile Tracking](speed_change.png)
+
 Multiple setpoint changes (30→50→20→40 km/h). The PID controller with anti-windup tracks
 each step cleanly. Key observations:
 
@@ -139,6 +143,8 @@ each step cleanly. Key observations:
 - Steady-state error is zero at every setpoint — the integrator does its job.
 
 ### `bad_weather.png` — Disturbance Rejection
+
+![Disturbance Rejection](bad_weather.png)
 
 A constant −3 m/s wind disturbance is applied at t = 5 s (equivalent to headwind drag).
 The integral term detects the persistent nonzero error and ramps the throttle until the

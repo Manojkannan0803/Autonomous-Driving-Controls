@@ -149,6 +149,8 @@ Measured on the 94.5 m urban path at 50 Hz simulation:
 
 ### `stack_paths.png` — Reference, Oracle, and EKF+MPC Trajectories
 
+![Reference, Oracle, and EKF+MPC Trajectories](stack_paths.png)
+
 Four overlaid paths on the 60 m × 60 m urban map:
 
 - **Reference path** (dashed black): the A\*/spline planned route from (2,2) to (57,57),
@@ -168,6 +170,8 @@ jitter than Oracle: the MPC receives a step change in the perceived state every 
 and re-optimises, causing small steering corrections that the Oracle avoids.
 
 ### `cte_comparison.png` — Cross-Track Error Over Time
+
+![Cross-Track Error Over Time](cte_comparison.png)
 
 Both CTE time series start near zero (both vehicles are initialised at the trajectory start)
 and show the same qualitative structure — peaks at the two building corners and lower
@@ -190,6 +194,8 @@ values on the straights.
 
 ### `estimation_error.png` — EKF Position Error vs. GPS Sigma
 
+![EKF Position Error vs. GPS Sigma](estimation_error.png)
+
 The most interpretable plot in the portfolio:
 
 - **Red band**: GPS raw accuracy (σ = 3 m). If we used GPS measurements directly as the
@@ -211,6 +217,8 @@ cumulative noise can temporarily exceed the GPS sigma.  After each GPS fix (vert
 ticks), the error drops sharply as the Kalman gain blends the measurement.
 
 ### `summary.png` — Statistics Table & Latency
+
+![Statistics Table & Latency](summary.png)
 
 **Bar chart (left)**: confirms both runs achieve similar absolute CTE magnitudes —
 neither controller catastrophically fails.  The 6 m max CTE corresponds to the two
