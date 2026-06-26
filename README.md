@@ -27,7 +27,7 @@ with no third-party dependencies (no Eigen, no ROS, no Boost).
 
 | Tool | Version | Notes |
 |---|---|---|
-| **GCC (MinGW-w64)** | ≥ 13 (C++20) | Required. Installed at `C:\Program Files\mingw64\bin` by default |
+| **GCC (MinGW-w64)** | ≥ 13 (C++20) | Required|
 | **Python** | ≥ 3.9 | Required for visualizations |
 | `matplotlib` | any | `pip install matplotlib` |
 | `numpy` | any | `pip install numpy` |
