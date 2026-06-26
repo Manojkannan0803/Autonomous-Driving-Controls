@@ -136,7 +136,6 @@ int main() {
 
     // ── Accumulators for metrics ──────────────────────────────────────────
     std::vector<double> kf_errs, ekf_errs;
-    double kf_anees_sum  = 0.0;
     double ekf_anees_sum = 0.0;
     int    anees_count   = 0;
 

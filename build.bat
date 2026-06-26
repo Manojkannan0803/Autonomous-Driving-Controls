@@ -4,11 +4,14 @@
 :: Requires:  MinGW GCC in PATH (or adjust GCC_PATH below)
 :: ============================================================================
 
+:: Always run from the directory that contains this script
+cd /d "%~dp0"
+
 set GCC_PATH=C:\Program Files\mingw64\bin
 set BASE=%~dp0
 set BUILD=%BASE%build
 set CXX="%GCC_PATH%\g++.exe"
-set FLAGS=-std=c++20 -Wall -Wextra -O2
+set FLAGS=-std=c++20 -Wall -Wextra -O2 -static-libgcc -static-libstdc++
 
 if not exist "%BUILD%" mkdir "%BUILD%"
 
@@ -25,7 +28,7 @@ echo [1/2] project1_integrators ...
     "%BASE%project1_integrators\src\main.cpp" ^
     -o "%BUILD%\integrators_demo.exe"
 if errorlevel 1 ( echo   FAILED & goto :end )
-echo   OK  ->  build\integrators_demo.exe
+echo   OK  -^>  build\integrators_demo.exe
 
 :: ── Project 2: PID Controller ────────────────────────────────────────────────
 echo.
@@ -35,7 +38,7 @@ echo [2/3] project2_pid_controller ...
     "%BASE%project2_pid_controller\src\main.cpp" ^
     -o "%BUILD%\pid_demo.exe"
 if errorlevel 1 ( echo   FAILED & goto :end )
-echo   OK  ->  build\pid_demo.exe
+echo   OK  -^>  build\pid_demo.exe
 
 :: ── Project 3: Bicycle Model ─────────────────────────────────────────────────
 echo.
@@ -45,7 +48,7 @@ echo [3/4] project3_bicycle_model ...
     "%BASE%project3_bicycle_model\src\main.cpp" ^
     -o "%BUILD%\bicycle_demo.exe"
 if errorlevel 1 ( echo   FAILED & goto :end )
-echo   OK  ->  build\bicycle_demo.exe
+echo   OK  -^>  build\bicycle_demo.exe
 
 :: ── Project 4: Lateral Controllers ──────────────────────────────────────────
 echo.
@@ -56,7 +59,7 @@ echo [4/5] project4_lateral_controllers ...
     "%BASE%project4_lateral_controllers\src\main.cpp" ^
     -o "%BUILD%\lateral_demo.exe"
 if errorlevel 1 ( echo   FAILED & goto :end )
-echo   OK  ->  build\lateral_demo.exe
+echo   OK  -^>  build\lateral_demo.exe
 
 :: ── Project 5: Kalman Filter + EKF ─────────────────────────────────────────
 echo.
@@ -67,7 +70,7 @@ echo [5/6] project5_kalman_filter ...
     "%BASE%project5_kalman_filter\src\main.cpp" ^
     -o "%BUILD%\kalman_demo.exe"
 if errorlevel 1 ( echo   FAILED & goto :end )
-echo   OK  ->  build\kalman_demo.exe
+echo   OK  -^>  build\kalman_demo.exe
 
 :: ── Project 6: LQR Trajectory Tracker ────────────────────────────────
 echo.
@@ -78,7 +81,7 @@ echo [6/7] project6_lqr_tracker ...
     "%BASE%project6_lqr_tracker\src\main.cpp" ^
     -o "%BUILD%\lqr_tracker_demo.exe"
 if errorlevel 1 ( echo   FAILED & goto :end )
-echo   OK  ->  build\lqr_tracker_demo.exe
+echo   OK  -^>  build\lqr_tracker_demo.exe
 
 :: ── Project 7: Path Planner (A* + Cubic Spline) ────────────────────────────
 echo.
@@ -88,7 +91,7 @@ echo [7/8] project7_path_planner ...
     "%BASE%project7_path_planner\src\main.cpp" ^
     -o "%BUILD%\path_planner_demo.exe"
 if errorlevel 1 ( echo   FAILED & goto :end )
-echo   OK  ->  build\path_planner_demo.exe
+echo   OK  -^>  build\path_planner_demo.exe
 
 :: ── Project 8: MPC Trajectory Controller (Capstone) ────────────────────
 echo.
@@ -101,7 +104,7 @@ echo [8/9] project8_mpc_controller ...
     "%BASE%project8_mpc_controller\src\main.cpp" ^
     -o "%BUILD%\mpc_demo.exe"
 if errorlevel 1 ( echo   FAILED & goto :end )
-echo   OK  ->  build\mpc_demo.exe
+echo   OK  -^>  build\mpc_demo.exe
 :: ── Project 9: Mini AV Stack (Full Pipeline Integration) ────────────────
 echo.
 echo [9/9] project9_av_stack ...
@@ -115,7 +118,7 @@ echo [9/9] project9_av_stack ...
     "%BASE%project9_av_stack\src\main.cpp" ^
     -o "%BUILD%\av_stack_demo.exe"
 if errorlevel 1 ( echo   FAILED & goto :end )
-echo   OK  ->  build\av_stack_demo.exe
+echo   OK  -^>  build\av_stack_demo.exe
 echo.
 echo ============================================================
 echo   Build complete!

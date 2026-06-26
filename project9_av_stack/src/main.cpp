@@ -84,7 +84,6 @@ static void run_oracle(const control::Trajectory& traj,
     log_out.clear();
     double t = 0.0, mpc_total = 0.0;
     int n = 0;
-    const auto& goal = traj[traj.size()-1];
     while (t <= sim_end + 1e-9) {
         auto t0  = std::chrono::steady_clock::now();
         auto ctl = tracker.compute(s);
@@ -124,7 +123,6 @@ static void run_ekf_mpc(const control::Trajectory& traj,
     log_out.clear();
     double t = 0.0, ekf_total = 0.0, mpc_total = 0.0;
     int n = 0;
-    const auto& goal2 = traj[traj.size()-1];
     while (t <= sim_end + 1e-9) {
         auto imu_true = true_imu(true_state, last_ctrl, p.wheelbase);
         auto imu_meas = imu_sensor.measure(imu_true.ax, imu_true.omega);
